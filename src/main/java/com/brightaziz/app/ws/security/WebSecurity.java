@@ -37,6 +37,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter{
 		.sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 		}
 	
+	
 	protected AuthenticationFilter getAuthenticationFilter() throws Exception {
 	    final AuthenticationFilter filter = new AuthenticationFilter(authenticationManager());
 	    filter.setFilterProcessesUrl("/users/login");

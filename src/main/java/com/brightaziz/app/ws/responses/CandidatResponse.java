@@ -1,13 +1,21 @@
-package com.brightaziz.app.ws.requests;
+package com.brightaziz.app.ws.responses;
 
-import java.sql.Timestamp;
+import java.util.Date;
 
-public class UserRequest {
+public class CandidatResponse {
+	private String userId;
 	private String firstName;
 	private String lastName;
 	private String email;
-	private String password;
-	private Timestamp datedeCandidature;
+	private Date datedeCandidature;
+	
+	
+	public String getUserId() {
+		return userId;
+	}
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
 	public String getFirstName() {
 		return firstName;
 	}
@@ -26,19 +34,12 @@ public class UserRequest {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	public Timestamp getDatedeCandidature() {
+	public Date getDatedeCandidature() {
 		return datedeCandidature;
 	}
-	public void setDatedeCandidature(Timestamp datedeCandidature) {
+	public void setDatedeCandidature(Date datedeCandidature) {
 		this.datedeCandidature = datedeCandidature;
 	}
-	
 	
 	
 }

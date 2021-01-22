@@ -1,6 +1,7 @@
 package com.brightaziz.app.ws.shared.dto;
 
 import java.io.Serializable;
+import java.sql.Timestamp;
 
 public class UserDto implements Serializable {
 	
@@ -17,6 +18,8 @@ public class UserDto implements Serializable {
 	private String encryptedPassword;
 	private String emailVerificationToken;
 	private Boolean emailverificationStatus=false;
+	private Timestamp datedeCandidature;
+	
 	public long getId() {
 		return id;
 	}
@@ -70,6 +73,12 @@ public class UserDto implements Serializable {
 	}
 	public void setEmailverificationStatus(Boolean emailverificationStatus) {
 		this.emailverificationStatus = emailverificationStatus;
+	}
+	public Timestamp getDatedeCandidature() {
+		return datedeCandidature;
+	}
+	public void setDatedeCandidature(Timestamp datedeCandidature) {
+		this.datedeCandidature = datedeCandidature;
 	}
 	
 	
