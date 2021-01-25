@@ -1,5 +1,7 @@
 package com.brightaziz.app.ws.controllers;
 
+import java.util.ArrayList;
+import java.util.List;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -13,8 +15,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.brightaziz.app.ws.requests.UserRequest;
 import com.brightaziz.app.ws.responses.UserResponse;
 import com.brightaziz.app.ws.services.UserService;
@@ -25,12 +27,10 @@ import com.brightaziz.app.ws.shared.dto.UserDto;
 @CrossOrigin
 public class UserController {
 	
-	
 	@Autowired
 	UserService userService;
 	
 	@GetMapping(path="/{id}", produces= {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE})
-	
 	
 	public ResponseEntity<UserResponse> getUser(@PathVariable String id) {
 		
@@ -41,12 +41,28 @@ public class UserController {
 		BeanUtils.copyProperties(userDto, userResponse);
 		
 		return new ResponseEntity<UserResponse>(userResponse, HttpStatus.OK);
-		
-		
+
 	}
-	@GetMapping("/")
-	public String index() {
-		return "Greetings from Spring Boot!";
+	
+	@GetMapping(produces= {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE})
+	
+	public List<UserResponse> getAllUsers(@RequestParam(value="page", defaultValue="1")int page , @RequestParam(value="limit",defaultValue="15") int limit){
+		
+		List<UserResponse> usersResponse = new ArrayList<>();
+		
+		List<UserDto> users =userService.getUsers(page,limit);
+		
+		for(UserDto userDto: users) {
+			
+			UserResponse user = new UserResponse();
+			
+			BeanUtils.copyProperties(userDto, user);
+			
+			usersResponse.add(user);
+		}
+		
+		return usersResponse;
+		
 	}
 	@PostMapping(
 			consumes={MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE},
@@ -63,7 +79,6 @@ public class UserController {
 		BeanUtils.copyProperties(createUser, userResponse);
 		
 		return new ResponseEntity<UserResponse>(userResponse, HttpStatus.CREATED);
-		
 		
 	}
 	

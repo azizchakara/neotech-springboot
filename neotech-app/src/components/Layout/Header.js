@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 
-class header extends Component {
+class Header extends Component {
   render() {
     return (
       <nav className="navbar navbar-expand-sm navbar-dark bg-primary mb-4">
         <div className="container">
           <a className="navbar-brand" href="Dashboard.html">
-            NeoTechIT
+            NeoTech IT
           </a>
           <button
             className="navbar-toggler"
@@ -44,4 +44,4 @@ class header extends Component {
     );
   }
 }
-export default header;
+export default Header;

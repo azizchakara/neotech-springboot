@@ -1,13 +1,11 @@
 package com.brightaziz.app.ws.requests;
 
-import java.sql.Timestamp;
 
 public class UserRequest {
 	private String firstName;
 	private String lastName;
 	private String email;
 	private String password;
-	private Timestamp datedeCandidature;
 	public String getFirstName() {
 		return firstName;
 	}
@@ -32,13 +30,6 @@ public class UserRequest {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public Timestamp getDatedeCandidature() {
-		return datedeCandidature;
-	}
-	public void setDatedeCandidature(Timestamp datedeCandidature) {
-		this.datedeCandidature = datedeCandidature;
-	}
-	
 	
 	
 }

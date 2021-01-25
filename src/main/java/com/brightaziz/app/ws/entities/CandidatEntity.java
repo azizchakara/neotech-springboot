@@ -2,7 +2,6 @@ package com.brightaziz.app.ws.entities;
 
 import java.io.Serializable;
 import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -17,7 +16,6 @@ public class CandidatEntity implements Serializable{
 	 */
 	private static final long serialVersionUID = -3477964903154982084L;
 	
-	
 	@Id
 	@GeneratedValue
 	private long id;
@@ -30,7 +28,7 @@ public class CandidatEntity implements Serializable{
 	private String lastName;
 	@Column(nullable=false, unique=true)
 	private String email;
-	@Column()
+	@Column(nullable=false)
 	private Date datedeCandidature;
 
 	public long getId() {

@@ -1,8 +1,6 @@
 package com.brightaziz.app.ws.entities;
 
 import java.io.Serializable;
-import java.sql.Timestamp;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -47,7 +45,6 @@ public class UserEntity implements Serializable{
 	
 	private Boolean emailverificationStatus =false;
 	
-	private Timestamp datedeCandidature;
 
 	public long getId() {
 		return id;
@@ -113,13 +110,6 @@ public class UserEntity implements Serializable{
 		this.emailverificationStatus = emailverificationStatus;
 	}
 
-	public Timestamp getDatedeCandidature() {
-		return datedeCandidature;
-	}
 
-	public void setDatedeCandidature(Timestamp datedeCandidature) {
-		this.datedeCandidature = datedeCandidature;
-	}
-	
 	
 }

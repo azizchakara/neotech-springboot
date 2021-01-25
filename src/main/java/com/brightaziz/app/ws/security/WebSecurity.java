@@ -1,5 +1,4 @@
 package com.brightaziz.app.ws.security;
-
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -23,11 +22,14 @@ public class WebSecurity extends WebSecurityConfigurerAdapter{
 	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
+		
 		http
 		.cors().and()
 		.csrf().disable()
 		.authorizeRequests()
 		.antMatchers(HttpMethod.POST, SecurityConstants.SIGN_UP_URL)
+		.permitAll()
+		.antMatchers(HttpMethod.POST, SecurityConstants.SIGN_UP_URL1)
 		.permitAll()
 		.anyRequest().authenticated()
 		.and()
