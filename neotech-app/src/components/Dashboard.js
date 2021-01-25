@@ -6,13 +6,14 @@ import { getCandidats } from "../actions/candidatsActions";
 import PropTypes from "prop-types";
 
 class Dashboard extends Component {
-  componenetDidMount() {
+  componentDidMount() {
     this.props.getCandidats();
   }
 
   render() {
     const { candidats } = this.props.candidat;
     console.log(this.props.candidat);
+
     return (
       <div className="projects">
         <div className="container">
@@ -40,7 +41,7 @@ Dashboard.propTypes = {
 };
 
 const mapStateToProps = (state) => ({
-  candidat: state.candidat,
+  candidat: state.candidats,
 });
 
 export default connect(mapStateToProps, { getCandidats })(Dashboard);

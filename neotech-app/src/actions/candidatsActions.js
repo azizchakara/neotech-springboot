@@ -15,6 +15,7 @@ export const createCandidat = (candidats, history) => async (dispatch) => {
 
 export const getCandidats = () => async (dispatch) => {
   const res = await axios.get("http://localhost:8084/candidats/all");
+
   dispatch({
     type: GET_CANDIDATS,
     payload: res.data,

@@ -1,11 +1,12 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 class Header extends Component {
   render() {
     return (
       <nav className="navbar navbar-expand-sm navbar-dark bg-primary mb-4">
         <div className="container">
-          <a className="navbar-brand" href="Dashboard.html">
+          <a className="navbar-brand" href="/">
             NeoTech IT
           </a>
           <button
@@ -28,14 +29,14 @@ class Header extends Component {
 
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
-                <a className="nav-link " href="register.html">
+                <Link className="nav-link" to="/register">
                   Sign Up
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="login.html">
+                <Link className="nav-link" to="/login">
                   Login
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
