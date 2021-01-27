@@ -24,7 +24,6 @@ import com.brightaziz.app.ws.shared.dto.UserDto;
 
 @RestController
 @RequestMapping("/users")
-@CrossOrigin
 public class UserController {
 	
 	@Autowired

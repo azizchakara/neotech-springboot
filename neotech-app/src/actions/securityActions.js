@@ -22,6 +22,7 @@ export const login = (loginRequest) => async (dispatch) => {
       "http://localhost:8084/users/login",
       loginRequest
     );
+
     const { token } = res.data;
     localStorage.setItem("jwtToken", token);
     setJWTTOKEN(token);
@@ -31,7 +32,6 @@ export const login = (loginRequest) => async (dispatch) => {
       playload: decoded,
     });
   } catch (err) {
-    console.log(err);
     dispatch({
       type: GET_ERRORS,
       playload: err.response.data,
