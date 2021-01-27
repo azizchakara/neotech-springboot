@@ -5,8 +5,7 @@ import jwt_decode from "jwt-decode";
 
 export const createNewUser = (newUser, history) => async (dispatch) => {
   try {
-    console.log("gg");
-    await axios.post("/users/login", newUser);
+    await axios.post("http://localhost:8084/users/login", newUser);
     history.push("login");
     dispatch({
       type: GET_ERRORS,
@@ -19,7 +18,10 @@ export const createNewUser = (newUser, history) => async (dispatch) => {
 
 export const login = (loginRequest) => async (dispatch) => {
   try {
-    const res = await axios.post("/users/login", loginRequest);
+    const res = await axios.post(
+      "http://localhost:8084/users/login",
+      loginRequest
+    );
     const { token } = res.data;
     localStorage.setItem("jwtToken", token);
     setJWTTOKEN(token);
@@ -29,6 +31,7 @@ export const login = (loginRequest) => async (dispatch) => {
       playload: decoded,
     });
   } catch (err) {
+    console.log(err);
     dispatch({
       type: GET_ERRORS,
       playload: err.response.data,

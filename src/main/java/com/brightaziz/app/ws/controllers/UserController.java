@@ -30,6 +30,7 @@ public class UserController {
 	@Autowired
 	UserService userService;
 	
+
 	@GetMapping(path="/{id}", produces= {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE})
 	
 	public ResponseEntity<UserResponse> getUser(@PathVariable String id) {
@@ -43,6 +44,7 @@ public class UserController {
 		return new ResponseEntity<UserResponse>(userResponse, HttpStatus.OK);
 
 	}
+	
 	
 	@GetMapping(produces= {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE})
 	

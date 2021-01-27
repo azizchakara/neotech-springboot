@@ -37,8 +37,8 @@ public class CandidatController {
 		BeanUtils.copyProperties(candidatDto, candidatResponse);
 		return new ResponseEntity<CandidatResponse>(candidatResponse, HttpStatus.OK);
 	}
-
-	
+    
+    
 	
 	@GetMapping(path ="all",produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
 	public List<CandidatResponse> getAllCandidats(@RequestParam(value="page") int page,@RequestParam(value="limit") int limit){

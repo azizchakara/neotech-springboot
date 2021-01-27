@@ -8,7 +8,7 @@ class Login extends Component {
     super();
     this.state = {
       email: "",
-      passowrd: "",
+      password: "",
     };
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
@@ -17,7 +17,7 @@ class Login extends Component {
     e.preventDefault();
     const LoginRequest = {
       email: this.state.email,
-      passowrd: this.state.passowrd,
+      password: this.state.password,
     };
 
     this.props.login(LoginRequest);

@@ -12,7 +12,7 @@ class Landing extends Component {
                 <h1 className="display-3 mb-4">Neo Tech IT</h1>
 
                 <hr />
-                <Link className="btn btn-lg btn-primary mr-2" to="/AddUser">
+                <Link className="btn btn-lg btn-primary mr-2" to="/register">
                   Sign Up
                 </Link>
                 <Link className="btn btn-lg btn-secondary mr-2" to="/login">
