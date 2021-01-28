@@ -5,6 +5,6 @@ import securityReducer from "./securityReducer";
 
 export default combineReducers({
   errors: errorReducer,
-  candidats: candidatReducer,
+  candidat: candidatReducer,
   security: securityReducer,
 });

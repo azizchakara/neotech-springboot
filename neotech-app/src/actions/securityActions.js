@@ -29,12 +29,12 @@ export const login = (loginRequest) => async (dispatch) => {
     const decoded = jwt_decode(token);
     dispatch({
       type: SET_CURRENT_USER,
-      playload: decoded,
+      payload: decoded,
     });
   } catch (err) {
     dispatch({
       type: GET_ERRORS,
-      playload: err.response.data,
+      payload: err.response.data,
     });
   }
 };

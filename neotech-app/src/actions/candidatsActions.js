@@ -18,6 +18,6 @@ export const getCandidats = () => async (dispatch) => {
 
   dispatch({
     type: GET_CANDIDATS,
-    payload: res.data,
+    payload: res.response.data,
   });
 };

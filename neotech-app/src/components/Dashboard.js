@@ -74,7 +74,7 @@ Dashboard.propTypes = {
 };
 
 const mapStateToProps = (state) => ({
-  candidat: state.candidats,
+  candidat: state.candidat,
 });
 
 export default connect(mapStateToProps, { getCandidats })(Dashboard);
